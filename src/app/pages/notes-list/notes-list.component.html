@@ -11,9 +11,9 @@
     </div>
 
     <div class="notes-list">
-        <app-notes-card [title]="'cardTitle'" [body]="'This is body something we can write here'"></app-notes-card>
-        <app-notes-card></app-notes-card>
-        <app-notes-card></app-notes-card>
+        <app-notes-card *ngFor="let note of notes; index as i" [routerLink]="'i'" [title]="note.title" [body]="note.body"></app-notes-card>
     </div>
+
+    <button class="button floating-add-button is-primary" routerLink="add-note">+ Add</button>
 
 </div>
